@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <script src="p5.js"></script>
+    <script src="courses.js"></script>
+    <script src="character.js"></script>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+</head>
+<body id="indexBody">
+    <h1 id="gameTitle">Find the Green</h1>
+    <a href="story.html" id="direct"><div id="playButton">
+        Start
+    </div></a>
+    <script>
+        window.onload = function() {
+            let direct = document.getElementById("direct")
+            let display = document.getElementById("playButton")
+            if ((window.localStorage.getItem("new") === null) || (window.localStorage.getItem("new") === true)) {
+                window.localStorage.setItem("new", true)
+                window.localStorage.setItem("level", 0)
+                direct.setAttribute("href","story.html")
+                display.innerText = "Start"
+            }
+            else {
+                direct.setAttribute("href","play.html")
+                display.innerText = "Continue"
+            }
+        }
+    </script>
+</body>
+</html>

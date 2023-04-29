@@ -1,0 +1,234 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+#indexBody {
+    background-image: url("dirtBackground.jpg")
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(0, 0, 0);
+}
+#gameTitle {
+    font-size: 10rem;
+    background-color: black; 
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    border-radius: 20px;
+
+}
+#playButton {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: brown;
+    width: 200px;
+    padding: 50px;
+    border-radius: 50px;
+    font-size: 3rem;
+    text-align: center;
+    cursor: pointer;
+}
+#playButton:hover {
+    background-color:rgb(143, 36, 36)
+}
+.space {
+    height: 25%;
+    text-align: center;
+}
+.space > span {
+    font-size: 2rem;
+}
+#menuSelector {
+    display: flex;
+    background-color: rgb(198, 198, 198);
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    border-style: solid;
+}
+#difficulty {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-around;
+    color: rgb(0, 0, 0);
+}
+.selectDifficulty {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 20%;
+    height: 75%;
+    top: 50%;
+    text-align: center;
+}
+.selectDifficulty > span {
+    width: 100%;
+    font-size: 2rem;
+}
+.selectDifficulty > button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#difficultyEasy > button {
+    background-color: rgb(0, 190, 0);
+    cursor: pointer;
+}
+#difficultyEasy > button:hover {
+    background-color: rgb(0, 109, 0)
+}
+
+#difficultyMedium > button {
+    background-color: rgb(210, 225, 0);
+    cursor: pointer;
+
+}
+#difficultyMedium > button:hover {
+    background-color: rgb(83, 109, 0)
+}
+
+#difficultyHard > button {
+    background-color: rgb(190, 0, 0);
+    cursor: pointer;
+}
+#difficultyHard > button:hover {
+    background-color: rgb(109, 0, 0)
+}
+
+#difficultyImpossible > button {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    cursor: pointer;
+}
+#difficultyImpossible > button:hover {
+    background-color: rgb(0, 0, 0)
+}
+#playHref {
+    display: none
+}
+
+#gameMenu {
+    position: absolute;
+    width: 70%;
+    height: 500px;
+    background-color: pink;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+}
+#finishMessage {
+    display: flex;
+    background-color: pink;
+    height:50%;
+    font-size: 5rem;
+    text-align: center;
+    align-items: center;
+}
+#finishMessage > span {
+    text-align: center;
+}
+#toggleStage {
+    display: flex;
+    background-color: pink;
+    height: 25%;
+    border-top-style: solid;
+    border-top-width: 5px;
+    align-items: center;
+    justify-content: space-around;
+}
+.toggle {
+    padding: 20px;
+}
+#toggleHome {
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#story {
+    background-color: white;
+    position: absolute;
+    border-radius: 20px;
+    border-style: solid;
+    width: 80%;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: center;
+}
+#controlBox {
+    position: absolute;
+    display: flex;
+    width: 50%;
+    height: auto;
+    flex-direction: row;
+    background-color: white;
+    flex-wrap:wrap;
+    align-content: space-around;
+    top: 20%;
+    left: 50%;
+    transform :translateX(-50%);
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+}
+.controlContainer {
+    display: flex;
+    flex-direction: column;
+    width: 49.74%;
+    height: 50%;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
+.boxControls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+.control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: baseline;
+    justify-content: center;
+    height: 100px;
+}
+.control > span {
+    height: 20%;
+}
+.control > img {
+    height: 80%;
+    width: auto;
+}

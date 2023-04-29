@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <script src="courses.js"></script>
+    <script src="character.js"></script>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+</head>
+<body>
+    <div id="gameMenu">
+        <div id="finishMessage">
+            <span id="completeMessage">You died!</span>
+        </div>
+        <div id="toggleStage">
+            <button class="toggle" id="previousStage" onclick="previous()">
+                Previous Stage
+            </button>
+            <button class="toggle" id="restartStage" onclick="restart()">
+                Restart Stage
+            </button>
+            <button class="toggle" id="nextStage" onclick="next()">
+                Next Stage
+            </button>
+        </div>
+        <div id="toggleHome">
+            <button class="toggle" id="homeToggle" onclick="home()">
+                Home
+            </button>
+            <button class="toggle" id="mainMenuToggle" onclick="mainMenu()">
+                Main Menu
+            </button>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            //If the player is new, set them to level one
+            //If the player is not new, set them to their level
+            window.localStorage.setItem("new",false)
+        }
+        let gameMenu = document.getElementById("gameMenu")
+        let nextButton = document.getElementById("nextStage")
+        let previousButton = document.getElementById("previousStage")
+        let winPhase = true
+        let nextPhase = true
+        function home() {
+            window.location.href="index.html"
+        }
+        function mainMenu() {
+            window.location.href="menu.html"
+        }
+        function next() {
+            nextPhase = false
+            win = false
+            level += 1
+            window.localStorage.setItem("level",level)
+            if (typeof window.localStorage.getItem(level) != undefined) {
+                if (window.localStorage.getItem(level) != "COMPLETE") {
+                    window.localStorage.setItem(level,"ON")
+                }
+            }
+            die = false
+            
+            location.reload()
+        }
+        function previous() {
+            level -= 1
+            window.localStorage.setItem("level",level)
+            gameMenu.style.display = "none"
+            die = false
+            win = false
+            location.reload()
+        }
+        function restart() {
+            gameMenu.style.display = "none"
+            location.reload()
+        }
+        //Checks to see if x is between the min number and the max number
+        const between = (x, min, max) => {
+            return x >= min && x <= max;
+        }
+        w = window.innerWidth
+        h = window.innerHeight
+        let character = new characterBox()
+        let moveAble = true
+        let moveAbleY = true
+        let starting = true
+        let win = false
+        let die = false
+        let deathSequence = true
+        let deathSound = true
+        let deathMessage
+        function preload() {
+            soundFormats('mp3')
+            dieSound = loadSound("die.mp3")
+            backgroundSong = loadSound("8bit-Music.mp3")
+        }
+        function setup() {
+            createCanvas(w,h)
+            backgroundSong.loop()
+        }
+        function draw() {
+            clear()
+            background(50,50,50)
+            noStroke()
+            fill(255,255,255)
+            playing(courses)
+        }
+        
+/*
+        if () {
+            character.up()
+        }
+        if () {
+            character.down()
+        }
+        if () {
+            character.left()
+        }
+        if () {
+            character.right()
+        }*/
+    </script>
+</body>
+</html>

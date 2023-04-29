@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <script src="p5.js"></script>
+    <script src="courses.js"></script>
+    <script src="character.js"></script>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+</head>
+<body id="indexBody">
+    <div id="menuSelector">
+        <div class="space">
+            <span>Choose your difficulty. Difficulty affects how fast your character moves</span>
+        </div>
+        <div id="difficulty">
+            <div class="selectDifficulty" id="difficultyEasy">
+                <button onclick="difficulty('Easy')">
+                <h1>Easy</h1>
+                <span>Character speed is 5</span>
+                </button>
+            </div>
+            <div class="selectDifficulty" id="difficultyMedium">
+                <button onclick="difficulty('Medium')">
+                    <h1>Medium</h1>
+                    <span>Character speed is 10</span>
+                </button>
+            </div>
+            <div class="selectDifficulty" id="difficultyHard">
+                <button onclick="difficulty('Hard')">
+                    <h1>Hard</h1>
+                    <span>Character speed is 15</span>
+                </button>
+                
+            </div>
+            <div class="selectDifficulty" id="difficultyImpossible">
+                <button onclick="difficulty('Impossible')">
+                <h1>Impossible</h1>
+                <span>Character speed is 20</span>
+                </button>
+            </div>
+        </div>
+        <h2 class="space" id="displayDifficulty">CHOOSE YOUR DIFFICULTY</h2>
+    </div>
+    <a href="play.html" id="playHref"><div id="playButton">
+        Play
+    </div></a>
+    <script>
+        function difficulty(x) {
+            document.getElementById("displayDifficulty").innerText = x
+            yum = document.getElementById("playHref")
+            yum.style.display = "block"
+            if (x == "Easy") {
+                window.localStorage.setItem("speed",5)
+            }
+            else if (x == "Medium") {
+                window.localStorage.setItem("speed",10)
+            }
+            else if (x == "Hard") {
+                window.localStorage.setItem("speed",15)
+            }
+            else if (x == "Impossible") {
+                window.localStorage.setItem("speed",20)
+            }
+        }
+    </script>
+</body>
+</html>
